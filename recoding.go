@@ -65,6 +65,19 @@ func fixArticle(s string) string {
 func CapitalizeALL(cap1 string) string {
 	return strings.Title(strings.ToLower(cap1))
 }
+func Is_Detect(word string) string {
+	if strings.ContainsAny("!,.;'", word) {
+		return "puntuation"
+	} else {
+		if strings.ContainsAny("0123456789", word) {
+			return "number"
+		}
+		if strings.ContainsAny("ABCDEFGH", word) {
+			return "letter"
+		}
+	}
+	return word
+}
 func main() {
 	fmt.Println(decimal("1E", 16))
 	fmt.Println(decimal("1010", 2))
@@ -84,5 +97,8 @@ func main() {
 	fmt.Println(isPunct(","))
 	fmt.Println(removespacefrompunc([]string{"Hello , World !"}))
 	fmt.Println(CapitalizeALL("hello world"))
+	fmt.Println(Is_Detect("!"))
+	fmt.Println(Is_Detect("A"))
+	fmt.Println(Is_Detect("7"))
 
 }
