@@ -19,6 +19,3 @@ func FixArticles(text string) string {
 
 	return strings.Join(word, " ")
 }
-func main() {
-	fmt.Println(FixArticles("an system"))
-}
