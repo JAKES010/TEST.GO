@@ -1,3 +1,10 @@
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
 func FixArticles(text string) string {
 	word := strings.Fields(text)
 
@@ -11,4 +18,7 @@ func FixArticles(text string) string {
 	}
 
 	return strings.Join(word, " ")
+}
+func main() {
+	fmt.Println(FixArticles("an system"))
 }

@@ -45,11 +45,17 @@ func HexToDecimal(str []string) []string {
 		if str[i] == "(hex)" && i > 0 {
 			val, _ := strconv.ParseInt(str[i-1], 16, 64)
 			str[i-1] = strconv.FormatInt(val, 10)
-			str = append(str[:i], str[i+1:]...)
+			// str = append(str[i+1:], str[:i]...)
+			str[i] = ""
 		}
 	}
 	return str
 }
+
+// func punct(str string) string {
+// 	words := strings.Fields(str)
+
+// }
 func main() {
 	work := []string{"my", "name", "isn't", "(up)", "REALLY", "WHAT", "YOU", "(low,", "3)", "think", "it", "is", "your", "at", "least", "1F", "(hex)", "percent", "wrong"}
 	fmt.Println(Caseing(work))
